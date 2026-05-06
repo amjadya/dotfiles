@@ -1,4 +1,7 @@
 function fn --description "fuzzy-find a file and open it in nvim"
+    argparse 'a/all' -- $argv
+    or return
+
     set -l search_path .
     if test (count $argv) -gt 0
         set search_path $argv
@@ -11,8 +14,13 @@ function fn --description "fuzzy-find a file and open it in nvim"
         end
     end
 
+    set -l rg_args --files --hidden $FZF_IGNORE_GLOBS
+    if set -q _flag_all
+        set -a rg_args --no-ignore
+    end
+
     set -l file (
-        rg --files --hidden --glob '!.git' --glob '!.cache' --glob '!node_modules' -- $search_path |
+        rg $rg_args -- $search_path |
         fzf
     )
 

@@ -12,7 +12,7 @@ function ff --description "fuzzy-find a file and open it in your default app"
     end
 
     set -l file (
-        rg --files --hidden --glob '!.git' --glob '!.cache' --glob '!node_modules' -- $search_path |
+        rg --files --hidden $FZF_IGNORE_GLOBS -- $search_path |
         fzf
     )
 

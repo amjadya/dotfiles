@@ -19,7 +19,7 @@ function s --description "search file contents, pick a match, open in nvim"
 
     set -l selected (
         rg --line-number --no-heading --smart-case --hidden \
-           --glob '!.git' --glob '!.cache' --glob '!node_modules' \
+           $FZF_IGNORE_GLOBS \
            -- "$pattern" $search_path |
         fzf --delimiter ':' \
             --preview 'bat --color=always --highlight-line {2} --style=numbers {1}' \

@@ -6,6 +6,12 @@ function fish_greeting
 end
 
 starship init fish | source
+fzf --fish | source
+
+set -x FZF_IGNORE_GLOBS --glob '!.git' --glob '!.cache' --glob '!node_modules'
+set -x FZF_IGNORE_EXCLUDES --exclude '.git' --exclude '.cache' --exclude 'node_modules'
+set -x FZF_ALT_C_COMMAND "fd -H --type d --follow $FZF_IGNORE_EXCLUDES --search-path '/home/meej'"
+set -x FZF_ALT_C_OPTS '--no-height'
 
 # Git abbreviations (expand visibly when you press space)
 abbr -a g git
