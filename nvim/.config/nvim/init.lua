@@ -1,3 +1,5 @@
+vim.filetype.add({ extension = { mdx = "markdown" } })
+
 require("config.lazy")
 
 vim.opt.number = true
