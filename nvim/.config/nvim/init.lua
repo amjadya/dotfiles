@@ -19,3 +19,6 @@ vim.opt.softtabstop = -1
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.clipboard = "unnamedplus"
+
+vim.opt.wrap = true
+vim.opt.linebreak = true
