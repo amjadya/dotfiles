@@ -25,6 +25,17 @@ if status is-interactive
     abbr -a gco git checkout
     abbr -a gb git branch
 
+    # Sourcing venvs
     abbr -a cpsc330 source ~/.venvs/cpsc330/bin/activate.fish
+
+    # Workflow tools
+    abbr -a uv90 'sudo intel-undervolt apply'
+    abbr -a c 'cd ~/Projects && claude' # lol
+
+    # Arduino abbreviations
+    abbr -a a arduino-cli
+    abbr -a ac arduino-cli compile -b
+    abbr -a acu arduino-cli compile --upload
+    abbr -a aba arduino-cli board attach
 
 end

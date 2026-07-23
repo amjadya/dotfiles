@@ -51,3 +51,4 @@
 initial-command = fish
 command = fish
 font-family = "JetBrainsMono Nerd Font"
+# theme = Purplepeter
